@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nunito+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    color: #fff;
+    overflow-y: hidden;
+}
+
+.slide {
+    position: relative;
+}
+
+.active {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 8vw;
+    position: absolute;
+    overflow: hidden;
+    animation: moveDown 500ms linear;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    } 100% {
+        transform: translateY(100%);
+    }
+}
+
+.title {
+    font-family: 'Black Ops One', cursive;
+    font-size: 2.5rem;
+}
+
+p {
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.active .text {
+    animation: moveDownVisible 500ms linear;
+}
+
+@keyframes moveDownVisible {
+    0% {
+        transform: translateY(-100%);
+    } 100% {
+        transform: translateY(0);
+    }
+}
+
+.image {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation: moveUp 500ms linear;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0%);
+    } 100% {
+        transform: translateY(-100%);
+    } 
+}
+
+.active .image {
+    animation: moveUpVisible 500ms linear;
+}
+
+@keyframes moveUpVisible {
+    0% {
+        transform: translateY(100%);
+    } 100% {
+        transform: translateY(0);
+    }
+}
+
+.slide1 .text {
+    background-color: #184e77;
+}
+
+.slide2 .text {
+    background-color: #0d1321;
+}
+
+.slide3 .text {
+    background-color: #f0c929;
+}
+
+.slide4 .text {
+    background-color: #21424f;
+}
+
+.slide5 .text {
+    background-color: #6b705c;
+}
+
+
+.btn {
+    position: absolute;
+    z-index: 101;
+    color: #e4d3cf;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #6b705c;
+}
+
+.btn.down {
+    right: 50%;
+    top: 50%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn.up {
+    left: 50%;
+    bottom: 50%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
